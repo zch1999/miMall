@@ -1,11 +1,11 @@
 <!--  -->
 <template>
-  <div>detail</div>
+  <div>order-header</div>
 </template>
 
 <script>
 export default {
-  name: 'detail',
+  name: 'order-header',
   data () {
     return {
     }

@@ -1,0 +1,24 @@
+<!--  -->
+<template>
+  <div>
+      <order-header></order-header>
+  </div>
+</template>
+
+<script>
+import OrderHeader from './../components/OrderHeader'
+export default {
+  name: 'order',
+  components:{
+      OrderHeader
+  },
+  data () {
+    return {
+    }
+  }
+}
+</script>
+
+<style lang='stylus' scoped>
+
+</style>

@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <nav-header></nav-header>
     <router-view></router-view>
-    <bav-footer></bav-footer>
   </div>
 </template>
 
