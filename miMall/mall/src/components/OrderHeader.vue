@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <div>order-header</div>
+  <div>order-head</div>
 </template>
 
 <script>
