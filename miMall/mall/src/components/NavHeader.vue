@@ -202,7 +202,7 @@ export default {
             background-color: $colorA;
             a{
               display: inline-block;
-              width: 55px;
+              width: 110px;
               height: 55px;
               &:before{
                 content: ' ';
