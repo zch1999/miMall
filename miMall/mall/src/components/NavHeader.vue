@@ -9,9 +9,11 @@
           <a href="javascript:">协议规则</a>
         </div>
         <div class="topbar-user">
-          <a href="javascript:">登录</a>
-          <a href="javascript:">注册</a>
-          <a href="javascript:" class="my-cart"><span class="icon-cart"></span>购物车</a>
+          <a href="javascript:" v-if="username">{{username}}</a>
+          <a href="javascript:" v-if="!username" @click="login">登录</a>
+          <a href="javascript:" v-if="!username">注册</a>
+          <a href="javascript:" v-if="username">我的订单</a>
+          <a href="javascript:" class="my-cart" @click="goToCart"><span class="icon-cart"></span>购物车</a>
         </div>
       </div>
     </div>
@@ -31,7 +33,7 @@
                       <img :src="item.mainImage" :alt="item.subtitle">
                     </div>
                     <div class="pro-name">{{item.name}}</div>
-                    <div class="pro-price">{{item.price}}元</div>
+                    <div class="pro-price">{{item.price | currency}}</div>
                   </a>
                 </li>
               </ul>
@@ -120,13 +122,22 @@ export default {
   data () {
     return {
       phoneList: [],
-      username: 'jack'
+      username: ''
+    }
+  },
+  filters:{
+    currency(val){
+      if(!val) return '0.00'
+      return '￥' + val.toFixed(2) + '元'
     }
   },
   mounted(){
     this.getProductList()
   },
   methods:{
+    login(){
+      this.$router.push('/login')
+    },
     getProductList(){
       this.axios.get('/products', {
         params: {
@@ -138,6 +149,9 @@ export default {
           this.phoneList = res.list;
       })
       // console.log(this.phoneList)
+    },
+    goToCart(){
+      this.$router.push('/cart')
     }
   }
 }
