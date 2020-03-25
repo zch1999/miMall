@@ -2,7 +2,7 @@
 <template>
   <div>
     <order-header></order-header>
-      cart
+      我是一个cart
     <nav-footer></nav-footer>
   </div>
 </template>
